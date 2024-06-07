@@ -6,11 +6,30 @@
 /*   By: htran-th <htran-th@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:12:05 by htran-th          #+#    #+#             */
-/*   Updated: 2024/06/04 19:20:18 by htran-th         ###   ########.fr       */
+/*   Updated: 2024/06/07 16:18:03 by htran-th         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+char	*ft_strchr(const char *str, int c)
+{
+	int		i;
+	char	ch;
+
+	ch = c;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == ch)
+			return ((char *)&str[i]);
+		i++;
+	}
+	if (str[i] == ch)
+		return ((char *) &str[i]);
+	else
+		return (NULL);
+}
 
 void	*ft_memcpy(void *to, const void *from, size_t n)
 {
@@ -31,7 +50,7 @@ void	*ft_memcpy(void *to, const void *from, size_t n)
 	return (to);
 }
 
-size_t	ft_strlen(const	char *str)
+size_t	ft_strlen(char *str)
 {
 	size_t	i;
 
@@ -43,7 +62,7 @@ size_t	ft_strlen(const	char *str)
 	return (i);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(char *s1)
 {
 	size_t	i;
 	size_t	len;
@@ -63,7 +82,7 @@ char	*ft_strdup(const char *s1)
 	return (ptr);
 }
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*res;
 	size_t	s1_len;
@@ -83,5 +102,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	ft_memcpy(res, s1, s1_len);
 	ft_memcpy((res + s1_len), s2, s2_len);
 	res[s1_len + s2_len] = '\0';
+	free(s1);
 	return (res);
 }
