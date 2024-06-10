@@ -6,7 +6,7 @@
 /*   By: htran-th <htran-th@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 16:02:35 by htran-th          #+#    #+#             */
-/*   Updated: 2024/06/07 16:34:06 by htran-th         ###   ########.fr       */
+/*   Updated: 2024/06/07 23:08:07 by htran-th         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # endif
 
 #include <fcntl.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdio.h>
