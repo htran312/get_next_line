@@ -6,7 +6,7 @@
 /*   By: htran-th <htran-th@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 15:36:10 by htran-th          #+#    #+#             */
-/*   Updated: 2024/06/13 18:34:34 by htran-th         ###   ########.fr       */
+/*   Updated: 2024/10/09 15:07:44 by htran-th         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ static void	ft_get_remainder(char **big_buf)
 		i++;
 	if ((*big_buf)[i] == '\n')
 		i++;
+	if (!(*big_buf + i))
 	{
 		ft_free(big_buf);
 		return ;
